@@ -294,6 +294,8 @@ def convert_audio_format(resp: "dict", bm):
 def add_instagram_cookies(url: "str", opt: "dict"):
     if url.startswith("https://www.instagram.com"):
         opt["cookiefi22"] = pathlib.Path(__file__).parent.joinpath("instagram.com_cookies.txt").as_posix()
+    elif "bilibili" in url or "b23.tv" in url:
+        opt["cookiefile"] = pathlib.Path(__file__).parent.joinpath("bilibili.com_cookies.txt").as_posix()
 
 
 def run_splitter(video_path: "str"):
